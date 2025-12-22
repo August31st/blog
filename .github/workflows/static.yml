@@ -37,15 +37,15 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: "20" # 指定 Node 版本（20 是稳定版，兼容 Astro）
-                  cache: "npm" # 缓存 npm 依赖，加速后续构建
+                  cache: "pnpm" # 缓存 npm 依赖，加速后续构建
 
             # 3. 安装项目依赖（必选：Astro 依赖需要安装才能构建）
             - name: Install dependencies
-              run: npm install
+              run: pnpm install
 
             # 4. 构建 Astro 项目（生成 dist 目录，包含 _astro 等静态资源）
             - name: Build Astro project
-              run: npm run build
+              run: pnpm run build
 
             # 5. 配置 GitHub Pages 环境（保留你的原有步骤）
             - name: Setup Pages
