@@ -22,6 +22,7 @@ concurrency:
     cancel-in-progress: false
 
 jobs:
+    # Single deploy job since we're just deploying
     deploy:
         environment:
             name: github-pages
@@ -30,34 +31,13 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-
-            # 新增：配置 pnpm 环境（关键，确保 runner 能识别 pnpm 命令）
-            - name: Setup pnpm
-              uses: pnpm/action-setup@v4
-
-            # 配置 Node.js 环境（保留，但配合 pnpm 使用）
-            - name: Setup Node.js
-              uses: actions/setup-node@v4
-              with:
-                  node-version: "20"
-                  cache: "pnpm" # 缓存改为 pnpm，加速依赖安装
-
-            # 替换：用 pnpm install 安装依赖（pnpm i 是简写，效果一致）
-            - name: Install dependencies
-              run: pnpm install
-
-            # 替换：用 pnpm run build 构建 Astro 项目
-            - name: Build Astro project
-              run: pnpm run build
-
             - name: Setup Pages
               uses: actions/configure-pages@v5
-
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
+                  # Upload entire repository
                   path: "./dist"
-
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v4
