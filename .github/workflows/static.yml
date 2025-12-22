@@ -34,8 +34,6 @@ jobs:
             # 新增：配置 pnpm 环境（关键，确保 runner 能识别 pnpm 命令）
             - name: Setup pnpm
               uses: pnpm/action-setup@v4
-              with:
-                  version: latest # 使用最新版 pnpm，也可指定具体版本如 "8"
 
             # 配置 Node.js 环境（保留，但配合 pnpm 使用）
             - name: Setup Node.js
