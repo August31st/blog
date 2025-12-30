@@ -16,24 +16,23 @@ export type DeviceCategory = {
 };
 
 export const devicesData: DeviceCategory = {
-	OnePlus: [
+	PE: [
 		{
-			name: "OnePlus 13T",
-			image: "/images/device/oneplus13t.png",
-			specs: "Gray / 16G + 1TB",
+			name: "Honor 90 Pro",
+			image: "/images/device/90pro.png",
+			specs: "Black / 16G + 256GB",
 			description:
-				"Flagship performance, Hasselblad imaging, 80W SuperVOOC.",
-			link: "https://www.oneplus.com/cn/13t",
+				"两亿像素写真相机，零风险调光护眼屏，5000mAh轻薄长续航。",
+			link: "https://www.honor.com/cn/phones/honor-90-pro/",
 		},
 	],
-	Router: [
+	PC: [
 		{
-			name: "GL-MT3000",
-			image: "/images/device/mt3000.png",
-			specs: "1000Mbps / 2.5G",
-			description:
-				"Portable WiFi 6 router suitable for business trips and home use.",
-			link: "https://www.gl-inet.cn/products/gl-mt3000/",
+			name: "OMEN by HP Gaming Laptop 16-wf0xxx",
+			image: "/images/device/OMEN16.png",
+			specs: "i9-13900HX + RTX 4060 8G / 16G + 2T",
+			description: "暗影无需多言。",
+			link: "https://www.hpstore.cn/laptops-tablets/personal-laptops/omen-laptops.html",
 		},
 	],
 };
